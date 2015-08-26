@@ -1,5 +1,6 @@
 package org.p0gram3r.codingdojo;
 
+import java.util.Collection;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -9,10 +10,10 @@ import java.util.TreeSet;
  */
 public class PhoneBookV2 {
 
-    private Map<String, TreeSet<String>> phoneBook = new TreeMap<>();
+    private Map<String, Collection<String>> phoneBook = new TreeMap<>();
 
     public void add (String name, String phone) {
-        TreeSet<String> phoneList;
+        Collection<String> phoneList;
         if ( phoneBook.get(name) == null) {
              phoneList = new TreeSet<>();
         } else {
@@ -27,7 +28,7 @@ public class PhoneBookV2 {
     public String toString(){
         String returnstr = "";
 
-        for (Map.Entry<String, TreeSet<String>> record : phoneBook.entrySet()) {
+        for (Map.Entry<String, Collection<String>> record : phoneBook.entrySet()) {
             returnstr += record.getKey() +":"+"\n";
             for (String phone : record.getValue()) {
                 returnstr += "  "+phone+"\n";
