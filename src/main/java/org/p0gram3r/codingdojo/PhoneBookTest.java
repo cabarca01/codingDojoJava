@@ -18,6 +18,7 @@ public class PhoneBookTest {
         System.out.println(book);
 
         book.add("André", "5678");
+        book.add("André", "5678");
 
         System.out.println(book);
     }
