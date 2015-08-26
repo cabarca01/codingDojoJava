@@ -1,7 +1,7 @@
 package org.p0gram3r.codingdojo;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Created by cabarca on 26/08/15.
@@ -11,7 +11,7 @@ public class PhoneBook {
     private Map<String, String> phoneBook;
 
     public  PhoneBook() {
-        phoneBook = new HashMap<String, String>();
+        phoneBook = new TreeMap<>();
     }
     public void add (String name, String phone) {
         phoneBook.put(name, phone);
