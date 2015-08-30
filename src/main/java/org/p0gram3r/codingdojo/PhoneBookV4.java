@@ -28,7 +28,7 @@ public class PhoneBookV4 {
             int recordIndex = records.indexOf(phoneRecord);
             phoneRecord = records.get(recordIndex);
             phoneRecord.addPhoneNumber(type, phoneNumber);
-            records.add(recordIndex, phoneRecord);
+            records.set(recordIndex, phoneRecord);
         } else {
             records.add(phoneRecord);
         }
