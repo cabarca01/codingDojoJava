@@ -61,9 +61,18 @@ public class PhoneBookRecord {
         String phoneStr = "";
         for (Map.Entry<PhoneType, Collection<String>> phoneDir : this.phoneList.entrySet()) {
             for (String phoneNumber : phoneDir.getValue()) {
-                phoneStr += "  "+phoneDir.getKey()+":"+phoneNumber;
+                phoneStr += "  "+phoneDir.getKey()+":"+phoneNumber+"\n";
             }
         }
         return phoneStr;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        boolean isTheSame = false;
+        if (object != null && object instanceof PhoneBookRecord ) {
+            isTheSame = this.getName() == ((PhoneBookRecord) object).getName();
+        }
+        return isTheSame;
     }
 }
