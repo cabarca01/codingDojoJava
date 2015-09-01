@@ -19,6 +19,10 @@ public class PhoneBookMain {
         book.add("André", PhoneType.MOBILE, "9876");
 
         System.out.println(book);
+
+        book.remove("André", PhoneType.MOBILE, "5678");
+        System.out.println(book);
+
     }
 
 }

@@ -51,6 +51,18 @@ public class PhoneBookV3 {
         phoneBook.put(name, phoneList );
     }
 
+    public void remove (String name, PhoneType type, String number) {
+        if (phoneBook.get(name) != null) {
+            phoneBook.get(name).get(type).remove(number);
+            if (phoneBook.get(name).get(type).isEmpty()) {
+                phoneBook.get(name).remove(type);
+            }
+            if (phoneBook.get(name).isEmpty()) {
+                phoneBook.remove(name);
+            }
+        }
+    }
+
     @Override
     public String toString(){
         String returnstr = "";
