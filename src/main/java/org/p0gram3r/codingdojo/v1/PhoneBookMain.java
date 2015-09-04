@@ -1,4 +1,4 @@
-package org.p0gram3r.codingdojo;
+package org.p0gram3r.codingdojo.v1;
 
 /**
  * Created by cabarca on 26/08/15.
