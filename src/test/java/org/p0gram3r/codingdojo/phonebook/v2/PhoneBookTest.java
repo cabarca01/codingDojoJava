@@ -149,4 +149,26 @@ public class PhoneBookTest {
 		assertTrue("PhoneBook has too many entries", phonebookNames.length == 1);
 		
 	}
+	
+	@Test
+	public void remove_PhoneListShouldHaveOnlyOneEntry() {
+		phonebook = new PhoneBook();
+		phonebook.add("D Name", PhoneType.HOME, "HomeNumberD");
+		phonebook.add("D Name", PhoneType.CELL, "CellNumberD");
+		
+		phonebook.remove("D Name", PhoneType.HOME, "HomeNumberD");
+		String[] phonebookNames = phonebook.getAllNames().toArray(new String[phonebook.getAllNames().size()]);
+		assertTrue("PhoneBook has too many entries", phonebookNames.length == 1);
+		assertTrue("PhoneType Cell is gone", phonebook.getNumber("D Name")[0].equals("CELL : CellNumberD"));
+	}
+	
+	@Test
+	public void remove_PhoneListShouldNotRemoveEntry() {
+		phonebook = new PhoneBook();
+		phonebook.add("D Name", PhoneType.HOME, "HomeNumberD");
+		phonebook.add("D Name", PhoneType.CELL, "CellNumberD");
+		
+		phonebook.remove("D Name", PhoneType.PAGER, "HomeNumberD");
+		assertEquals("PhoneNumber HomeNumberD is gone", 2, phonebook.getNumber("D Name").length);
+	}
 }
